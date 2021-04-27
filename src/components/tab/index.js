@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Typography from 'components/typography';
 import './index.sass';
 
-const Tab = ({ letter, number, isActive, onClick, className }) => {
+const Tab = React.forwardRef(({ letter, number, isActive, onClick, className }, ref) => {
   const classes = classNames({
     'tab': true,
     'is-disabled': number === 0,
@@ -14,12 +14,12 @@ const Tab = ({ letter, number, isActive, onClick, className }) => {
   });
 
   return (
-    <button className={classes} disabled={number === 0} onClick={onClick}>
+    <button className={classes} disabled={number === 0} onClick={onClick} ref={ref}>
       <Typography component="h4" className="tab__letter">{letter}</Typography>
       <Typography component="p" className="tab__number">{number}</Typography>
     </button>
   );
-};
+});
 
 Tab.defaultProps = {
   number: 0
