@@ -1,7 +1,7 @@
 import React from 'react';
 // Components
 import ToggleTheme from 'components/toggle-theme';
-import Tabs from 'components/tabs';
+import ContactsList from 'components/contact-list';
 // Context
 import { ThemeProvider } from 'context/theme-context';
 // Styles
@@ -15,7 +15,7 @@ const App = () => {
           <ToggleTheme />
         </div>
         <div className="app__body">
-          <Tabs />
+          <ContactsList />
         </div>
       </ThemeProvider>
     </div>
