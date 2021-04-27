@@ -1,0 +1,26 @@
+@import ~styles/abstract/variables
+@import ~styles/abstract/utils
+
+.tab
+  padding: 3px 8px
+  background-color: getColor('theme')
+  user-select: none
+  transition: 0.2s
+  color: getColor('text-primary')
+  border-bottom: 1px solid $c-alto
+  &.is-disabled
+    cursor: not-allowed
+    .tab__letter,
+    .tab__number
+      opacity: 0.2
+    &:hover
+      color: getColor('text-primary') !important
+  &.is-active,
+  &:hover
+    color: $c-moody-blue
+  &__letter
+    margin-bottom: 2px
+    text-align: left
+  &__number
+    text-align: right
+  &__letter
