@@ -9,12 +9,14 @@ html, body
   font-size: $base-font-size
   font-weight: 400
   text-align: left
-  color: $c-dark
+  color: getColor('text-primary')
   height: 100%
 body
   position: relative
+  background-color: getColor('base')
   margin: 0
   padding: 0
+  transition: background-color 0.3s
 a, a:focus
   outline: none
   text-decoration: none
@@ -44,6 +46,8 @@ button
   font-family: inherit
   &:focus
     outline: none
+  &:disabled
+    cursor: default
 button::-moz-focus-inner
   border: 0
 

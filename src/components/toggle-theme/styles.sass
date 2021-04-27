@@ -1,0 +1,41 @@
+@import ~styles/abstract/variables
+@import ~styles/abstract/utils
+
+.switch
+  position: relative
+  &__input
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    &:checked + .switch__label
+      background-color: $c-rhino
+    &:checked + .switch__label .switch__label-dot
+      left: calc(100% - 2px)
+      transform: translateX(-100%)
+  &__label
+    position: relative
+    display: block
+    width: 60px
+    height: 30px
+    background-color: $c-alto
+    border-radius: 50px
+    cursor: pointer
+    &-dot
+      position: absolute
+      top: 2px
+      left: 2px
+      width: 26px
+      height: 26px
+      background-color: getColor('base')
+      border-radius: 50%
+      transition: 0.2s
+    &-icon
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 16px
+      height: 16px
