@@ -15,6 +15,9 @@
     &:checked + .switch__label .switch__label-dot
       left: calc(100% - 2px)
       transform: translateX(-100%)
+    &:focus +
+      .switch__label
+        box-shadow: $sh-primary !important
   &__label
     position: relative
     display: block
@@ -23,6 +26,7 @@
     background-color: $c-alto
     border-radius: 50px
     cursor: pointer
+    transition: box-shadow 0.3s
     &-dot
       position: absolute
       top: 2px
