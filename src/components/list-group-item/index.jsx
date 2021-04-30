@@ -5,12 +5,17 @@ import classNames from 'classnames';
 import Typography from 'components/typography';
 // Styles
 import './index.sass';
+// Context
+import { useTheme } from 'context/theme-context';
 // Utils
 import { handleAccessibilityKeyPress } from 'utils/helpers';
 
 const ListGroupItem = ({ children, className, onClick }) => {
+  const { dark } = useTheme();
+
   const classes = classNames({
     'list-group-item': true,
+    'list-group-item--dark': dark,
     [className]: className
   });
 

@@ -2,10 +2,15 @@
 @import ~styles/abstract/utils
 
 .list-group-item
-  border-bottom: 1px solid $c-alto
+  border-bottom: 1px solid $c-wild-sand
   padding:  10px
   transition: background-color 0.3s
   outline: none
   &:hover,
   &:focus
     background-color: $c-wild-sand
+  &--dark
+    border-color: $c-moody-blue
+    &:hover,
+    &:focus
+      background-color: $c-moody-blue
