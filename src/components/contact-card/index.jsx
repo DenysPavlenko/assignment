@@ -21,7 +21,7 @@ const ContactCard = ({ children, avatar, firstName, lastName, className, ...othe
     [className]: className
   });
 
-  const handleOpen = () => setIsOpened(true);
+  const toggleOpen = () => setIsOpened(isOpened => !isOpened);
   const handleClose = () => setIsOpened(false);
 
   useClickOutside(contactCardRef, handleClose);
@@ -29,7 +29,7 @@ const ContactCard = ({ children, avatar, firstName, lastName, className, ...othe
   return (
     <div ref={contactCardRef}>
       {React.Children.map(children, child => (
-        React.cloneElement(child, { onClick: handleOpen })
+        React.cloneElement(child, { onClick: toggleOpen })
       ))}
       <div className={classes}>
         <CSSTransition nodeRef={contactCardWrapRef} in={isOpened} timeout={300} classNames="contact-card-animation" unmountOnExit>
