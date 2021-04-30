@@ -13,8 +13,8 @@ const ListGroupItem = ({ children, className, onClick }) => {
   });
 
   return (
-    <div className={classes} onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
-      <Typography component="p">{children}</Typography>
+    <div className={classes}>
+      <Typography component="span" variant="p" onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>{children}</Typography>
     </div>
   );
 };
@@ -22,6 +22,7 @@ const ListGroupItem = ({ children, className, onClick }) => {
 ListGroupItem.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 export default ListGroupItem;
