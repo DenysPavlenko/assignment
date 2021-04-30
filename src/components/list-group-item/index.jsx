@@ -13,8 +13,8 @@ const ListGroupItem = ({ children, className, onClick }) => {
   });
 
   return (
-    <div className={classes}>
-      <Typography component="span" variant="p" onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>{children}</Typography>
+    <div tabIndex="1" className={classes} style={{ cursor: onClick ? 'pointer' : 'default' }} onClick={onClick}>
+      <Typography component="h6">{children}</Typography>
     </div>
   );
 };
