@@ -1,17 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-// Components
-import Tab from 'components/tab';
 // Styles
 import './index.sass';
 
-const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-
-const Tabs = ({ className }) => {
+const Tabs = ({ children, activeTab, onClick, className }) => {
   const activeTabRef = React.createRef();
   const indicatorRef = React.createRef();
-  const [activeLetter, setActiveLetter] = React.useState('a');
 
   const classes = classNames({
     'tabs': true,
@@ -27,24 +22,23 @@ const Tabs = ({ className }) => {
     // Apply styles to the indicator
     indicator.style.left = `${tabOffsetLeft}px`;
     indicator.style.width = `${tabWidth}px`;
-  }, [activeLetter]);
-
-  const handleTabClick = letter => setActiveLetter(letter);
+  }, [activeTab]);
 
   return (
     <div className={classes}>
       <div className="tabs__wrap">
-        {letters.map((letter, idx) => (
-          <Tab
-            key={idx}
-            letter={letter}
-            number={letters.length - 1 - idx}
-            isActive={activeLetter === letter}
-            onClick={() => handleTabClick(letter)}
-            className="tabs__tab"
-            ref={activeLetter === letter ? activeTabRef : null}
-          />
-        ))}
+        {React.Children.map(children, child => {
+          const { label } = child.props;
+          return (
+            React.cloneElement(child, {
+              key: label,
+              isActive: activeTab === label,
+              className: 'tabs__tab',
+              ref: activeTab === label ? activeTabRef : null,
+              onClick: () => onClick(label)
+            })
+          );
+        })}
       </div>
       <div className="tabs__indicator" ref={indicatorRef}></div>
     </div>
@@ -53,6 +47,9 @@ const Tabs = ({ className }) => {
 
 Tabs.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  activeTab: PropTypes.string,
 };
 
 export default Tabs;
