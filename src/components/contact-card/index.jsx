@@ -6,6 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import Typography from 'components/typography';
 // Hooks
 import useClickOutside from 'hooks/use-click-outside';
+import useTabClick from 'hooks/use-tab-click';
 // Styles
 import './index.sass';
 // Assets
@@ -25,6 +26,7 @@ const ContactCard = ({ children, avatar, firstName, lastName, className, ...othe
   const handleClose = () => setIsOpened(false);
 
   useClickOutside(contactCardRef, handleClose);
+  useTabClick(contactCardRef, handleClose);
 
   return (
     <div ref={contactCardRef}>
