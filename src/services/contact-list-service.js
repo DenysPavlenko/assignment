@@ -11,7 +11,16 @@ export default class ContactListService {
   }
 
   getContacts = async () => {
-    const { results } = await this.getResource('?results=10&inc=name,picture,email,phone,location&nat=us&seed=abc');
-    return results;
+    const { results } = await this.getResource('?results=100&inc=name,picture,email,phone,location&nat=us&seed=abc');
+    const list = {};
+    results.sort((a, b) => a.name.last.localeCompare(b.name.last));
+    results.forEach(item => {
+      const letter = item.name.last[0].toLowerCase();
+      if (!list[letter]) {
+        list[letter] = [];
+      }
+      list[letter].push(item);
+    });
+    return list;
   }
 }
