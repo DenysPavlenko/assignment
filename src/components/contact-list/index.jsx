@@ -59,7 +59,7 @@ const ContactList = ({ fetchContactListRequest, contactList: { loading, data, er
                     state={item.location.state}
                     postcode={item.location.postcode}
                   >
-                    <ListGroupItem>{item.name.first} {item.name.last}</ListGroupItem>
+                    <ListGroupItem>{item.name.first}, {item.name.last}</ListGroupItem>
                   </ContactCard>
                 ))}
               </ListGroup>
