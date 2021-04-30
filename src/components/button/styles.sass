@@ -1,0 +1,27 @@
+@import ~styles/abstract/variables
+@import ~styles/abstract/utils
+
+.button
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  font-size: rem(14px)
+  line-height: 1
+  font-weight: 700
+  transition: 0.3s
+  cursor: pointer
+  user-select: none
+  border-radius: $br-secondary
+  color: $c-white
+  padding: 9px 22px
+  // Variants
+  &--primary
+    background-color: $c-moody-blue
+    &:hover
+      background-color: darken($c-moody-blue, 12%)
+
+  // States
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
