@@ -11,7 +11,7 @@ export default class ContactListService {
   }
 
   getContacts = async () => {
-    const { results } = await this.getResource('?results=100&inc=id,name,picture,email,phone,location&nat=us&seed=abc');
+    const { results } = await this.getResource('?results=200&inc=id,name,picture,email,phone,location&nat=au,us,gb&seed=abc');
     const list = {};
     results.sort((a, b) => a.name.last.localeCompare(b.name.last));
     results.forEach(item => {
