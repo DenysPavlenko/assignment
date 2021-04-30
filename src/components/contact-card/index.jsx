@@ -40,6 +40,7 @@ const ContactCard = ({ children, avatar, firstName, lastName, className, ...othe
             <div className="contact-card__row">
               <div className="contact-card__left">
                 <img className="contact-card__avatar" src={avatar} alt="avatar" />
+                <Typography component="h5" className="contact-card__name-mobile">{firstName} {lastName}</Typography>
               </div>
               <div className="contact-card__right">
                 <Typography component="h5" className="contact-card__name">{firstName} {lastName}</Typography>
@@ -47,13 +48,13 @@ const ContactCard = ({ children, avatar, firstName, lastName, className, ...othe
                 </div>
                 <table className="contact-card__details">
                   <tbody>
-                    {Object.keys(otherProps).map(key => (
+                    {Object.keys(otherProps).map((key, idx) => (
                       <tr key={key}>
                         <td className="contact-card__details-name">
                           <Typography component="span" variant="h6">{key}:</Typography>
                         </td>
                         <td className="contact-card__details-value">
-                          <Typography component="span" variant="p">{otherProps[key]}</Typography>
+                          <Typography component="span" variant="p" style={{ wordBreak: idx === 0 && 'break-all' }}>{otherProps[key]}</Typography>
                         </td>
                       </tr>
                     ))}
