@@ -13,8 +13,13 @@ const Tab = React.forwardRef(({ label, number, isActive, onClick, className }, r
     [className]: className
   });
 
+  const handleClick = e => {
+    e.currentTarget.blur();
+    onClick();
+  };
+
   return (
-    <button className={classes} disabled={number === 0} onClick={onClick} ref={ref}>
+    <button className={classes} disabled={number === 0} onClick={handleClick} ref={ref}>
       <Typography component="h4" className="tab__label">{label}</Typography>
       <Typography component="p" className="tab__number">{number}</Typography>
     </button>
