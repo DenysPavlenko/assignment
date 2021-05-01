@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// Context
-import { useTheme } from 'context/theme-context';
 // Styles
 import './index.sass';
 
 const Spinner = ({ boxed }) => {
-  const { dark } = useTheme();
-
   const classes = classNames({
     'spinner': true,
-    'spinner--light': dark,
   });
 
   const spinner = (

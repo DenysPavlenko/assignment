@@ -13,13 +13,13 @@
   cursor: pointer
   user-select: none
   border-radius: $br-secondary
-  color: $c-white
+  color: getColor('text-contrast')
   padding: 9px 22px
   // Variants
   &--primary
-    background-color: $c-moody-blue
+    background-color: getColor('primary')
     &:hover
-      background-color: darken($c-moody-blue, 12%)
+      background-color: getColor('primary-dark')
 
   // States
   &:disabled

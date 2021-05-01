@@ -7,17 +7,19 @@
   user-select: none
   transition: 0.2s
   min-width: 50px
-  color: getColor('text-primary')
+  color: getColor('text')
   &.is-disabled
     cursor: not-allowed
     .tab__label,
     .tab__number
       opacity: 0.2
     &:hover
-      color: getColor('text-primary') !important
+      color: getColor('text')
   &.is-active,
   &:hover
-    color: $c-moody-blue
+    color: getColor('primary')
+  &:focus
+    background-color: getColor('default')
   &__label
     margin-bottom: 2px
     text-align: left

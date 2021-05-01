@@ -18,16 +18,17 @@
     position: absolute
     top: 5px
     right: 5px
-    width: 25px
-    height: 25px
-    padding: 5px
     cursor: pointer
-    path
-      transition: 0.2s
-      fill: $c-alto
+    padding: 5px
     &:hover
       path
-        fill: darken($c-alto, 10%)
+        fill: getColor('default-dark')
+    &-icon
+      width: 15px
+      height: 15px
+      path
+        transition: 0.3s
+        fill: getColor('default')
   &__row
     position: relative
     display: flex

@@ -13,6 +13,7 @@ const ToggleTheme = () => {
     <div className="switch">
       <input type="checkbox" className="switch__input" id="switch" onChange={toggleTheme} checked={dark} />
       <label htmlFor="switch" className="switch__label">
+        <div className="switch__label-bg" />
         <div className="switch__label-dot">
           {dark ?
             <Moon className="switch__label-icon" />

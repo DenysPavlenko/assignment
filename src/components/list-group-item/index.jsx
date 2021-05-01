@@ -5,17 +5,13 @@ import classNames from 'classnames';
 import Typography from 'components/typography';
 // Styles
 import './index.sass';
-// Context
-import { useTheme } from 'context/theme-context';
 // Utils
 import { handleAccessibilityKeyPress } from 'utils/helpers';
 
-const ListGroupItem = ({ children, className, onClick }) => {
-  const { dark } = useTheme();
-
+const ListGroupItem = ({ isActive, children, className, onClick }) => {
   const classes = classNames({
     'list-group-item': true,
-    'list-group-item--dark': dark,
+    'is-active': isActive,
     [className]: className
   });
 
@@ -30,6 +26,7 @@ const ListGroupItem = ({ children, className, onClick }) => {
 
 ListGroupItem.propTypes = {
   children: PropTypes.node,
+  isActive: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func
 };

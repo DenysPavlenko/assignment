@@ -31,12 +31,14 @@ const ContactCard = ({ children, avatar, firstName, lastName, className, ...othe
   return (
     <div ref={contactCardRef}>
       {React.Children.map(children, child => (
-        React.cloneElement(child, { onClick: toggleOpen })
+        React.cloneElement(child, { onClick: toggleOpen, isActive: isOpened })
       ))}
       <div className={classes}>
         <CSSTransition nodeRef={contactCardWrapRef} in={isOpened} timeout={300} classNames="contact-card-animation" unmountOnExit>
           <div className="contact-card__wrap" ref={contactCardWrapRef}>
-            <CloseIcon className="contact-card__close" onClick={handleClose} />
+            <button className="contact-card__close" onClick={handleClose}>
+              <CloseIcon className="contact-card__close-icon" />
+            </button>
             <div className="contact-card__row">
               <div className="contact-card__left">
                 <img className="contact-card__avatar" src={avatar} alt="avatar" />

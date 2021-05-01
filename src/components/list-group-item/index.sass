@@ -2,15 +2,10 @@
 @import ~styles/abstract/utils
 
 .list-group-item
-  border-bottom: 1px solid $c-wild-sand
+  border-bottom: 1px solid getColor('default')
   padding:  10px
   transition: background-color 0.3s
   outline: none
-  &:hover,
-  &:focus
-    background-color: $c-wild-sand
-  &--dark
-    border-color: $c-moody-blue
-    &:hover,
-    &:focus
-      background-color: $c-moody-blue
+  &:focus,
+  &.is-active
+    background-color: getColor('default')

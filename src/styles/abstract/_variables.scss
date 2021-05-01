@@ -9,26 +9,30 @@ $bp-md: 767px;
 $bp-sm: 575px;
 $bp-xs: 460px;
 
-// Colors
-$c-white     : #ffffff;
-$c-black     : #000000;
-$c-mirage    : #1a1c2b;
-$c-rhino     : #2c3159;
-$c-moody-blue: #5861ac;
-$c-alto      : #d8d4d4;
-$c-wild-sand : #e9e9e9;
-$c-torch-red : #F31B1B;
 // Themes
 $theme: (
-  base : $c-wild-sand,
-  theme: $c-white,
-  text-primary: $c-black
+  base         : #e9e9e9,
+  theme        : #ffffff,
+  default      : #e1e1e1,
+  default-dark : #d5d5d5,
+  primary      : #1976d2,
+  primary-dark : #115293,
+  error        : #F31B1B,
+  text         : #212121,
+  text-contrast: #ffffff,
 );
 $theme-dark: (
-  base        : $c-mirage,
-  theme       : $c-rhino,
-  text-primary: $c-white
+  base         : #212121,
+  theme        : #424242,
+  default      : #606060,
+  default-dark : #575757,
+  primary      : #90caf9,
+  primary-dark : #648dae,
+  error        : #F31B1B,
+  text         : #ffffff,
+  text-contrast: #212121,
 );
+
 // UI
 $br-primary  : 10px;
 $br-secondary: 5px;
