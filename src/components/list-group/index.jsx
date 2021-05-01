@@ -13,8 +13,8 @@ const ListGroup = ({ children, className }) => {
   return (
     <div className={classes}>
       <div className="list-group__row">
-        {children.map((child, idx) => (
-          <div key={idx} className="list-group__col">{child}</div>
+        {React.Children.map(children, child => (
+          <div className="list-group__col">{child}</div>
         ))}
       </div>
     </div>
@@ -22,7 +22,7 @@ const ListGroup = ({ children, className }) => {
 };
 
 ListGroup.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 
