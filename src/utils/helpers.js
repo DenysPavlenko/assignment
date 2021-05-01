@@ -5,6 +5,7 @@ export const handleAccessibilityKeyPress = (e, handler) => {
     e.key === 'Spacebar' ||
     e.which === 13 ||
     e.which === 32;
+  /* istanbul ignore else */
   if (enterOrSpace) {
     e.preventDefault();
     handler();
