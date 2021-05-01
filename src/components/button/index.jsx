@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // Styles
-import './styles.sass';
+import './index.sass';
 
 const Button = ({ children, href, className, variant, disabled, onClick, type, style }) => {
   const classes = classNames({
