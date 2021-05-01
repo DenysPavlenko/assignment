@@ -21,7 +21,7 @@ import './index.sass';
 
 const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-const ContactList = ({ fetchContactListRequest, contactList: { loading, data, error } }) => {
+export const ContactList = ({ fetchContactListRequest, contactList: { loading, data, error } }) => {
   const [activeLetter, setActiveLetter] = React.useState('a');
   const handleTabClick = letter => setActiveLetter(letter);
 
@@ -30,16 +30,16 @@ const ContactList = ({ fetchContactListRequest, contactList: { loading, data, er
   }, [fetchContactListRequest]);
 
   return (
-    <div className='contact-list'>
-      <Typography component='h1' className='contact-list__title'>Contact List</Typography>
-      <div className='contact-list__tabs'>
+    <div className="contact-list">
+      <Typography component="h1" className="contact-list__title">Contact List</Typography>
+      <div className="contact-list__tabs">
         <Tabs activeTab={activeLetter} onClick={handleTabClick}>
           {letters.map((letter, idx) => (
             <Tab key={idx} label={letter} number={(data && data[letter]) ? data[letter].length : 0} />
           ))}
         </Tabs>
       </div>
-      <div className='contact-list__body'>
+      <div className="contact-list__body">
         {error && <ErrorIndicator retry={fetchContactListRequest} />}
         {loading && <Spinner boxed />}
         {data &&
