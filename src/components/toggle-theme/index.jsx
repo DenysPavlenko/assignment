@@ -1,6 +1,6 @@
 import React from 'react';
 // Styles
-import './styles.sass';
+import './index.sass';
 import { useTheme } from 'context/theme-context';
 // Assets
 import { ReactComponent as Sun } from 'assets/images/icons/sun.svg';
@@ -16,9 +16,9 @@ const ToggleTheme = () => {
         <div className="switch__label-bg" />
         <div className="switch__label-dot">
           {dark ?
-            <Moon className="switch__label-icon" />
+            <Moon className="switch__label-icon" id="moonIcon" />
             :
-            <Sun className="switch__label-icon" />
+            <Sun className="switch__label-icon" id="sunIcon" />
           }
         </div>
       </label>
