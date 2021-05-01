@@ -22,7 +22,7 @@ describe('TabPanels component', () => {
     expect(component.length).toBe(1);
   });
   test('does not throw warning with expected props', () => {
-    const expectedProps = { ...defaultProps, onClick: () => { } };
+    const expectedProps = { ...defaultProps };
     const propsError = checkProps(TabPanels, expectedProps);
     expect(propsError).toBeUndefined();
   });

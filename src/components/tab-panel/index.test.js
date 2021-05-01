@@ -21,7 +21,7 @@ describe('TabPanel component', () => {
     expect(component.length).toBe(1);
   });
   test('does not throw warning with expected props', () => {
-    const expectedProps = { ...defaultProps, onClick: () => { } };
+    const expectedProps = { ...defaultProps };
     const propsError = checkProps(TabPanel, expectedProps);
     expect(propsError).toBeUndefined();
   });
