@@ -22,7 +22,7 @@ const ListGroupItem = ({ children, className, onClick }) => {
   const handleKeyPress = e => onClick && handleAccessibilityKeyPress(e, onClick);
 
   return (
-    <div tabIndex="1" className={classes} style={{ cursor: onClick ? 'pointer' : 'default' }} onClick={onClick} onKeyPress={handleKeyPress}>
+    <div tabIndex="0" className={classes} style={{ cursor: onClick ? 'pointer' : 'default' }} onClick={onClick} onKeyPress={handleKeyPress}>
       <Typography component="h6">{children}</Typography>
     </div>
   );
