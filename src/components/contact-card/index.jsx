@@ -12,10 +12,12 @@ import './index.sass';
 // Assets
 import { ReactComponent as CloseIcon } from 'assets/images/icons/close.svg';
 
-const ContactCard = ({ children, avatar, firstName, lastName, className, ...otherProps }) => {
+const ContactCard = ({ children, avatar, firstName, lastName, className, email, phone, street, city, state, postcode }) => {
   const [isOpened, setIsOpened] = React.useState(false);
   const contactCardRef = React.useRef(null);
   const contactCardWrapRef = React.useRef(null);
+
+  const details = { email, phone, street, city, state, postcode };
 
   const classes = classNames({
     'contact-card': true,
@@ -50,13 +52,13 @@ const ContactCard = ({ children, avatar, firstName, lastName, className, ...othe
                 </div>
                 <table className="contact-card__details">
                   <tbody>
-                    {Object.keys(otherProps).map((key, idx) => (
+                    {Object.keys(details).map((key, idx) => (
                       <tr key={key}>
                         <td className="contact-card__details-name">
                           <Typography component="span" variant="h6">{key}:</Typography>
                         </td>
                         <td className="contact-card__details-value">
-                          <Typography component="span" variant="p" style={{ wordBreak: idx === 0 && 'break-all' }}>{otherProps[key]}</Typography>
+                          <Typography component="span" variant="p" style={{ wordBreak: idx === 0 && 'break-all' }}>{details[key]}</Typography>
                         </td>
                       </tr>
                     ))}
@@ -77,6 +79,12 @@ ContactCard.propTypes = {
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   className: PropTypes.string,
+  email: PropTypes.string,
+  phone: PropTypes.string,
+  street: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  postcode: PropTypes.string
 };
 
 export default ContactCard;
