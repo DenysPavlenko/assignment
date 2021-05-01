@@ -27,13 +27,13 @@ const setup = (props = {}) => {
 
 describe('Tabs component', () => {
   test('renders without error', () => {
-    let wrapper = setup();
+    const wrapper = setup();
     const component = wrapper.find('.tabs');
     expect(component.length).toBe(1);
   });
   test('calls click handler on tabs__tab click', () => {
     const mockFunc = jest.fn();
-    let wrapper = setup({ onClick: mockFunc });
+    const wrapper = setup({ onClick: mockFunc });
     const component = wrapper.find('.tabs__tab');
     component.simulate('click');
     expect(mockFunc.mock.calls.length).toBe(1);

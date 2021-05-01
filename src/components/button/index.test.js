@@ -22,12 +22,12 @@ const setup = (props = {}) => {
 
 describe('Button component', () => {
   test('renders without error', () => {
-    let wrapper = setup();
+    const wrapper = setup();
     const component = wrapper.find('.button');
     expect(component.length).toBe(1);
   });
   test('should render <a></a> tag with href prop', () => {
-    let wrapper = setup({ href: 'https://example.com' });
+    const wrapper = setup({ href: 'https://example.com' });
     const component = wrapper.find('.button');
     expect(component.first().type()).toEqual('a');
   });

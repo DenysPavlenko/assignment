@@ -16,7 +16,7 @@ const setup = (props = {}) => {
 
 describe('TabPanel component', () => {
   test('renders without error', () => {
-    let wrapper = setup();
+    const wrapper = setup();
     const component = wrapper.find('.tab-panel');
     expect(component.length).toBe(1);
   });

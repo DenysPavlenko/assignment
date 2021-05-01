@@ -15,17 +15,17 @@ const setup = ({ dark }) => {
 
 describe('ToggleTheme component', () => {
   test('renders without error', () => {
-    let wrapper = setup({});
+    const wrapper = setup({});
     const component = wrapper.find('.switch');
     expect(component.length).toBe(1);
   });
   test('renders Sun icon if dark is false', () => {
-    let wrapper = setup({ dark: false });
+    const wrapper = setup({ dark: false });
     const component = wrapper.find('#sunIcon').first();
     expect(component.length).toBe(1);
   });
   test('renders Moon icon if dark is true', () => {
-    let wrapper = setup({ dark: true });
+    const wrapper = setup({ dark: true });
     const component = wrapper.find('#moonIcon').first();
     expect(component.length).toBe(1);
   });

@@ -16,7 +16,7 @@ const setup = (props = {}) => {
 
 describe('ListGroup component', () => {
   test('renders without error', () => {
-    let wrapper = setup();
+    const wrapper = setup();
     const component = wrapper.find('.list-group');
     expect(component.length).toBe(1);
   });

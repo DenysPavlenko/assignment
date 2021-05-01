@@ -15,12 +15,12 @@ const setup = (props = {}) => {
 
 describe('Spinner component', () => {
   test('renders without error', () => {
-    let wrapper = setup();
+    const wrapper = setup();
     const component = wrapper.find('.spinner');
     expect(component.length).toBe(1);
   });
   test('wraps spinner into box with boxed:true prop', () => {
-    let wrapper = setup({ boxed: true });
+    const wrapper = setup({ boxed: true });
     const component = wrapper.find('.spinner-box');
     expect(component.length).toBe(1);
   });

@@ -18,12 +18,12 @@ const setup = (props = {}) => {
 
 describe('Typography component', () => {
   test('renders without error', () => {
-    let wrapper = setup();
+    const wrapper = setup();
     const component = wrapper.find('p');
     expect(component.length).toBe(1);
   });
   test('does not add an empty class', () => {
-    let wrapper = setup({ variant: undefined });
+    const wrapper = setup({ variant: undefined });
     const component = wrapper.find('p');
     expect(component.get(0).props.className).toBe(null);
   });

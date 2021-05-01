@@ -16,12 +16,12 @@ const setup = (props = {}) => {
 
 describe('ErrorIndicator component', () => {
   test('renders without error', () => {
-    let wrapper = setup();
+    const wrapper = setup();
     const component = wrapper.find('.error-indicator');
     expect(component.length).toBe(1);
   });
   test('should render retry button with "retry" prop', () => {
-    let wrapper = setup({ retry: () => { } });
+    const wrapper = setup({ retry: () => { } });
     const component = wrapper.find('.error-indicator__button');
     expect(component.length).toBe(1);
   });

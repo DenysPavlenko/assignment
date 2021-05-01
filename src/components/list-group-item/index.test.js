@@ -18,18 +18,18 @@ const setup = (props = {}) => {
 
 describe('ListGroupItem component', () => {
   test('renders without error', () => {
-    let wrapper = setup();
+    const wrapper = setup();
     const component = wrapper.find('.list-group-item');
     expect(component.length).toBe(1);
   });
   test('should set cursor:pointer if onClick exists', () => {
-    let wrapper = setup({ onClick: () => { } });
+    const wrapper = setup({ onClick: () => { } });
     const component = wrapper.find('.list-group-item');
     expect(component.get(0).props.style.cursor).toBe('pointer');
   });
   test('should emit handleAccessibilityKeyPress on KeyPress event', () => {
     const mockFunc = jest.fn();
-    let wrapper = setup({ onClick: mockFunc });
+    const wrapper = setup({ onClick: mockFunc });
     const component = wrapper.find('.list-group-item');
     component.simulate('keypress', { key: 'Enter', preventDefault: () => { } });
     expect(mockFunc.mock.calls.length).toBe(1);
