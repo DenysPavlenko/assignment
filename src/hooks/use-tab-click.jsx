@@ -4,6 +4,7 @@ const useTabClick = (ref, handler) => {
   useEffect(() => {
     const listener = e => {
       var code = e.keyCode || e.which;
+      /* istanbul ignore else */
       if (code === 9) {
         handler(e);
       }
