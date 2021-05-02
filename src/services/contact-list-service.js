@@ -1,8 +1,9 @@
 export default class ContactListService {
   _apiBase = 'https://randomuser.me/api/';
 
-  async getResource(params) {
+  getResource = async params => {
     const res = await fetch(`${this._apiBase}${params}`);
+    /* istanbul ignore else */
     if (!res.ok) {
       throw new Error(`Could not fetch ${this._apiBase}, received ${res.status}`);
     }
@@ -16,6 +17,7 @@ export default class ContactListService {
     results.sort((a, b) => a.name.last.localeCompare(b.name.last));
     results.forEach(item => {
       const letter = item.name.last[0].toLowerCase();
+      /* istanbul ignore else */
       if (!list[letter]) {
         list[letter] = [];
       }
