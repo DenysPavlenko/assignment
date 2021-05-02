@@ -1,11 +1,12 @@
-import { takeLatest, put } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
 import { fetchContactListRequest, fetchContactListSuccess, fetchContactListFailure } from './actions';
 import ContactListService from 'services/contact-list-service';
-const contactListService = new ContactListService();
 
-function* fetchContactListDataWorker() {
+export const contactListService = new ContactListService();
+
+export function* fetchContactListDataWorker() {
   try {
-    const data = yield contactListService.getContacts();
+    const data = yield call(contactListService.getContacts);
     yield put(fetchContactListSuccess(data));
   } catch ({ message }) {
     yield put(fetchContactListFailure(message));
