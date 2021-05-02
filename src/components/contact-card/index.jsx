@@ -84,7 +84,10 @@ ContactCard.propTypes = {
   street: PropTypes.string,
   city: PropTypes.string,
   state: PropTypes.string,
-  postcode: PropTypes.string
+  postcode: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
 };
 
 export default ContactCard;
